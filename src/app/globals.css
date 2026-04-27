@@ -9,7 +9,7 @@
   --font-jost: 'Jost', sans-serif;
   --gold: #C9A84C;
   --gold-light: #E2C47A;
-  --dark: #0a0a0a;
+  --dark: #111110;
 }
 
 * {
@@ -23,7 +23,7 @@ html {
 }
 
 body {
-  background-color: #0a0a0a;
+  background-color: #111110;
   color: #e5e5e5;
   font-family: var(--font-jost), sans-serif;
   font-weight: 300;
@@ -35,21 +35,11 @@ body {
   color: #C9A84C;
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-track { background: #111110; }
 ::-webkit-scrollbar-thumb { background: #C9A84C55; border-radius: 2px; }
 ::-webkit-scrollbar-thumb:hover { background: #C9A84C; }
 
-/* Gold divider */
-.gold-line {
-  display: block;
-  width: 40px;
-  height: 1px;
-  background: #C9A84C;
-}
-
-/* Animate on scroll */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -58,4 +48,13 @@ body {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
