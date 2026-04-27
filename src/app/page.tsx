@@ -8,7 +8,7 @@ export default function HomePage() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       entries => entries.forEach(e => e.isIntersecting && e.target.classList.add('visible')),
-      { threshold: 0.1 }
+      { threshold: 0.08 }
     )
     revealRefs.current.forEach(el => el && observer.observe(el))
     return () => observer.disconnect()
@@ -19,19 +19,26 @@ export default function HomePage() {
   }
 
   const services = [
-    { title: 'Luxury Residential', desc: 'Bespoke homes built to the highest standard — where architecture meets artistry.', icon: '⬡' },
-    { title: 'Interior Renovation', desc: 'Transformative renovations that reimagine spaces with precision and elegance.', icon: '◈' },
-    { title: 'Commercial', desc: 'Commercial landmarks that blend function with striking architectural presence.', icon: '▣' },
-    { title: 'New Build', desc: 'Ground-up construction delivered on time, on budget, and beyond expectation.', icon: '◻' },
-    { title: 'Luxury Renovation', desc: 'Elevating existing properties to new heights of refinement and value.', icon: '◆' },
-    { title: 'Custom Carpentry', desc: 'Hand-crafted millwork and joinery that define interiors with lasting character.', icon: '✦' },
+    { title: 'Custom Homes', desc: 'Bespoke residential builds tailored to your vision and lifestyle.', icon: '⌂' },
+    { title: 'Commercial', desc: 'Office, retail and mixed-use projects executed at the highest standard.', icon: '▣' },
+    { title: 'Renovations', desc: 'Full-home transformations and high-end interior remodels.', icon: '◈' },
+    { title: 'Design-Build', desc: 'Integrated design and construction under one accountable team.', icon: '✦' },
+    { title: 'Luxury Renovation', desc: 'Elevating existing properties to new heights of refinement.', icon: '◆' },
+    { title: 'Custom Carpentry', desc: 'Hand-crafted millwork and joinery defining interiors with lasting character.', icon: '⬡' },
   ]
 
   const stats = [
-    { value: '15+', label: 'Years of Excellence' },
-    { value: '200+', label: 'Projects Completed' },
-    { value: '98%', label: 'Client Satisfaction' },
-    { value: '$2B+', label: 'Value Delivered' },
+    { value: '20+', label: 'Years Experience' },
+    { value: '200+', label: 'Projects Delivered' },
+    { value: '100%', label: 'Licensed & Insured' },
+    { value: '5★', label: 'Client Rating' },
+  ]
+
+  const process = [
+    { num: '01', title: 'Consult', desc: 'We listen carefully to understand your goals, budget and timeline.' },
+    { num: '02', title: 'Design', desc: 'Detailed plans, transparent estimates and material selection.' },
+    { num: '03', title: 'Build', desc: 'Master craftsmen execute with precision, on time and on budget.' },
+    { num: '04', title: 'Deliver', desc: 'Final walkthrough, warranty and dedicated aftercare service.' },
   ]
 
   const projects = [
@@ -40,159 +47,186 @@ export default function HomePage() {
     { title: 'Aurum Tower', category: 'Commercial', image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80' },
   ]
 
+  const GoldLine = () => (
+    <span style={{ display: 'block', width: '40px', height: '1px', background: 'linear-gradient(to right, #D4A843, #F0C866)' }} />
+  )
+
+  const SectionLabel = ({ text }: { text: string }) => (
+    <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '1rem' }}>
+      <GoldLine />
+      <span style={{ fontFamily: 'var(--font-jost)', color: '#D4A843', fontSize: '11px', letterSpacing: '0.4em', textTransform: 'uppercase', fontWeight: '500' }}>{text}</span>
+    </div>
+  )
+
   return (
     <>
-      {/* HERO */}
+      {/* ── HERO ── */}
       <section style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0 }}>
-          <img
-            src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1800&q=80"
-            alt="EMF Constructions luxury home"
-            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
-          />
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, #111110ee 0%, #111110bb 50%, #111110 100%)' }} />
-          <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at center, #C9A84C08 0%, transparent 70%)' }} />
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1800&q=80" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, #0f0f0ef0 0%, #0f0f0ec0 55%, #0f0f0e 100%)' }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 30% 60%, #D4A84308 0%, transparent 65%)' }} />
         </div>
 
         <div style={{ textAlign: 'center', padding: '0 2rem', maxWidth: '900px', position: 'relative', zIndex: 1 }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '16px', marginBottom: '2rem', animation: 'fadeIn 1s ease forwards' }}>
-            <span style={{ display: 'block', width: '40px', height: '1px', background: '#C9A84C' }} />
-            <span style={{ fontFamily: 'var(--font-jost)', color: '#C9A84C', fontSize: '11px', letterSpacing: '0.4em', textTransform: 'uppercase', fontWeight: '500' }}>Building Excellence Since 2009</span>
-            <span style={{ display: 'block', width: '40px', height: '1px', background: '#C9A84C' }} />
+            <GoldLine />
+            <span style={{ fontFamily: 'var(--font-jost)', color: '#D4A843', fontSize: '11px', letterSpacing: '0.4em', textTransform: 'uppercase', fontWeight: '500' }}>Building Excellence Since 2009</span>
+            <GoldLine />
           </div>
 
-          <h1 style={{
-            fontFamily: 'var(--font-cormorant)',
-            fontSize: 'clamp(3.5rem, 10vw, 7rem)',
-            fontWeight: '400',
-            color: '#ffffff',
-            lineHeight: '1.05',
-            marginBottom: '1.5rem',
-            animation: 'fadeUp 1s ease 0.2s both',
-            textShadow: '0 2px 40px #0008',
-          }}>
+          <h1 style={{ fontFamily: 'var(--font-cormorant)', fontSize: 'clamp(3.5rem, 10vw, 7rem)', fontWeight: '400', color: '#fff', lineHeight: '1.05', marginBottom: '1.5rem', animation: 'fadeUp 1s ease 0.2s both' }}>
             We Build<br />
-            <span style={{ color: '#C9A84C', fontStyle: 'italic' }}>Timeless</span><br />
+            <span className="gold-text" style={{ fontStyle: 'italic' }}>Timeless</span><br />
             Structures
           </h1>
 
-          <p style={{
-            fontFamily: 'var(--font-jost)',
-            color: '#ccc',
-            fontSize: 'clamp(14px, 2vw, 17px)',
-            lineHeight: '1.9',
-            fontWeight: '300',
-            maxWidth: '560px',
-            margin: '0 auto 2.5rem',
-            animation: 'fadeUp 1s ease 0.4s both',
-          }}>
-            From luxury residences to commercial landmarks — EMF Constructions crafts spaces that endure. Every project is a testament to craftsmanship, partnership, and pride.
+          <p style={{ fontFamily: 'var(--font-jost)', color: '#ccc', fontSize: 'clamp(14px, 2vw, 17px)', lineHeight: '1.9', fontWeight: '300', maxWidth: '560px', margin: '0 auto 2.5rem', animation: 'fadeUp 1s ease 0.4s both' }}>
+            Premier residential and commercial construction. Two decades of meticulous craftsmanship, uncompromising quality and timeless design.
           </p>
 
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', animation: 'fadeUp 1s ease 0.6s both' }}>
-            <Link href="/work" style={{
-              fontFamily: 'var(--font-jost)', fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase',
-              color: '#111', background: '#C9A84C', padding: '15px 36px', textDecoration: 'none', fontWeight: '600',
-              boxShadow: '0 4px 30px #C9A84C66',
-            }}>
-              View Our Work
-            </Link>
-            <Link href="/quote" style={{
-              fontFamily: 'var(--font-jost)', fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase',
-              color: '#fff', border: '1px solid #ffffff55', padding: '15px 36px', textDecoration: 'none', fontWeight: '400',
-              backdropFilter: 'blur(4px)',
-            }}>
-              Get a Quote
-            </Link>
+          <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', animation: 'fadeUp 1s ease 0.6s both' }}>
+            <Link href="/quote" className="btn-gold">Start Your Project →</Link>
+            <Link href="/work" className="btn-ghost">View Our Work</Link>
           </div>
         </div>
 
         <div style={{ position: 'absolute', bottom: '2rem', left: '50%', transform: 'translateX(-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
-          <span style={{ fontFamily: 'var(--font-jost)', color: '#888', fontSize: '9px', letterSpacing: '0.3em', textTransform: 'uppercase' }}>Scroll</span>
-          <div style={{ width: '1px', height: '40px', background: 'linear-gradient(to bottom, #C9A84C, transparent)' }} />
+          <span style={{ fontFamily: 'var(--font-jost)', color: '#555', fontSize: '9px', letterSpacing: '0.3em', textTransform: 'uppercase' }}>Scroll</span>
+          <div style={{ width: '1px', height: '40px', background: 'linear-gradient(to bottom, #D4A843, transparent)' }} />
         </div>
       </section>
 
-      {/* STATS BAR */}
-      <section style={{ background: '#C9A84C', padding: '3rem 2rem' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '2rem', textAlign: 'center' }}>
-          {stats.map((stat, i) => (
-            <div key={i}>
-              <div style={{ fontFamily: 'var(--font-cormorant)', fontSize: '3rem', fontWeight: '600', color: '#111', lineHeight: 1 }}>{stat.value}</div>
-              <div style={{ fontFamily: 'var(--font-jost)', fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#111a', marginTop: '6px', fontWeight: '600' }}>{stat.label}</div>
+      {/* ── STATS ── */}
+      <section style={{ background: '#0a0a09', borderTop: '1px solid #D4A84322', borderBottom: '1px solid #D4A84322', padding: '2.5rem 2rem' }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '1rem', textAlign: 'center' }}>
+          {stats.map((s, i) => (
+            <div key={i} style={{ padding: '1rem 0' }}>
+              <div className="gold-text" style={{ fontFamily: 'var(--font-cormorant)', fontSize: '2.8rem', fontWeight: '600', lineHeight: 1 }}>{s.value}</div>
+              <div style={{ fontFamily: 'var(--font-jost)', fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#888', marginTop: '6px', fontWeight: '500' }}>{s.label}</div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* SERVICES — fixed 3-col grid, no empty cell */}
-      <section style={{ padding: '7rem 2rem', background: '#111110' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div ref={addRef} className="reveal" style={{ marginBottom: '4rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '1rem' }}>
-              <span style={{ display: 'block', width: '40px', height: '1px', background: '#C9A84C' }} />
-              <span style={{ fontFamily: 'var(--font-jost)', color: '#C9A84C', fontSize: '11px', letterSpacing: '0.4em', textTransform: 'uppercase', fontWeight: '500' }}>What We Do</span>
+      {/* ── ABOUT SNIPPET ── */}
+      <section style={{ padding: '7rem 2rem', background: '#0f0f0e' }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '5rem', alignItems: 'center' }}>
+          <div ref={addRef} className="reveal">
+            <div style={{ position: 'relative', height: '500px', overflow: 'hidden', boxShadow: '0 16px 60px rgba(212,168,67,0.15)' }}>
+              <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80" alt="EMF team" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '2rem', background: 'linear-gradient(to top, #0f0f0e 0%, transparent 100%)' }} />
             </div>
-            <h2 style={{ fontFamily: 'var(--font-cormorant)', fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: '400', color: '#fff' }}>Our Services</h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: '#C9A84C18' }} className="services-grid">
-            {services.map((service, i) => (
-              <div
-                key={i}
-                ref={addRef}
-                className="reveal"
-                style={{
-                  padding: '2.5rem',
-                  background: '#111110',
-                  transition: 'background 0.3s',
-                  transitionDelay: `${i * 0.08}s`,
-                }}
-                onMouseEnter={e => (e.currentTarget.style.background = '#1c1c1a')}
-                onMouseLeave={e => (e.currentTarget.style.background = '#111110')}
-              >
-                <div style={{ fontFamily: 'var(--font-cormorant)', color: '#C9A84C', fontSize: '2rem', marginBottom: '1rem' }}>{service.icon}</div>
-                <h3 style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.4rem', fontWeight: '500', color: '#fff', marginBottom: '0.8rem' }}>{service.title}</h3>
-                <p style={{ fontFamily: 'var(--font-jost)', color: '#aaa', fontSize: '13px', lineHeight: '1.8', fontWeight: '300' }}>{service.desc}</p>
+          <div ref={addRef} className="reveal">
+            <SectionLabel text="About EMF" />
+            <h2 style={{ fontFamily: 'var(--font-cormorant)', fontSize: 'clamp(2.2rem, 4vw, 3.2rem)', fontWeight: '400', color: '#fff', marginBottom: '0.5rem', lineHeight: '1.15' }}>
+              Two Decades of<br /><span className="gold-text" style={{ fontStyle: 'italic' }}>Mastery.</span>
+            </h2>
+            <div style={{ width: '40px', height: '2px', background: 'linear-gradient(to right, #D4A843, #F0C866)', margin: '1.5rem 0' }} />
+            <p style={{ fontFamily: 'var(--font-jost)', color: '#ccc', fontSize: '15px', lineHeight: '1.9', fontWeight: '300', marginBottom: '1.2rem' }}>
+              EMF Constructions was founded on a simple principle: every detail matters. From the first sketch to the final walk-through, our team treats your project as our own — combining heritage craftsmanship with modern engineering.
+            </p>
+            <p style={{ fontFamily: 'var(--font-jost)', color: '#aaa', fontSize: '14px', lineHeight: '1.9', fontWeight: '300', marginBottom: '2rem' }}>
+              We partner with leading architects, designers and trades to deliver landmark buildings, luxury residences and refined renovations across the region.
+            </p>
+            <div style={{ display: 'flex', gap: '2rem', marginBottom: '2.5rem' }}>
+              {['Licensed', 'Award Winning', 'On Schedule'].map((badge, i) => (
+                <div key={i} style={{ textAlign: 'center' }}>
+                  <div className="gold-text" style={{ fontSize: '1.4rem', marginBottom: '4px' }}>
+                    {i === 0 ? '✓' : i === 1 ? '★' : '◷'}
+                  </div>
+                  <div style={{ fontFamily: 'var(--font-jost)', fontSize: '9px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#888', fontWeight: '500' }}>{badge}</div>
+                </div>
+              ))}
+            </div>
+            <Link href="/about" className="btn-gold">Our Story</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SERVICES ── */}
+      <section style={{ padding: '7rem 2rem', background: '#0a0a09' }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+          <div ref={addRef} className="reveal" style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <SectionLabel text="Our Services" />
+            <h2 style={{ fontFamily: 'var(--font-cormorant)', fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: '400', color: '#fff', lineHeight: '1.1' }}>
+              Full-Spectrum <span className="gold-text">Construction</span>
+            </h2>
+            <p style={{ fontFamily: 'var(--font-jost)', color: '#aaa', fontSize: '14px', lineHeight: '1.8', fontWeight: '300', maxWidth: '520px', margin: '1rem auto 0' }}>
+              From foundation to finish — every service delivered by our in-house team of master builders.
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1px', background: '#D4A84314' }} className="services-grid">
+            {services.map((s, i) => (
+              <div key={i} ref={addRef} className="reveal" style={{ padding: '2.5rem', background: '#0a0a09', transition: 'background 0.3s', transitionDelay: `${i * 0.07}s`, cursor: 'default' }}
+                onMouseEnter={e => (e.currentTarget.style.background = '#141413')}
+                onMouseLeave={e => (e.currentTarget.style.background = '#0a0a09')}>
+                <div className="gold-text" style={{ fontFamily: 'var(--font-cormorant)', fontSize: '2rem', marginBottom: '1rem' }}>{s.icon}</div>
+                <h3 style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.4rem', fontWeight: '500', color: '#fff', marginBottom: '0.7rem' }}>{s.title}</h3>
+                <p style={{ fontFamily: 'var(--font-jost)', color: '#aaa', fontSize: '13px', lineHeight: '1.8', fontWeight: '300' }}>{s.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FEATURED WORK */}
-      <section style={{ padding: '7rem 2rem', background: '#0e0e0d' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+      {/* ── PROCESS ── */}
+      <section style={{ padding: '7rem 2rem', background: '#0f0f0e' }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+          <div ref={addRef} className="reveal" style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <SectionLabel text="Our Process" />
+            <h2 style={{ fontFamily: 'var(--font-cormorant)', fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: '400', color: '#fff' }}>
+              A Clear <span className="gold-text">Path</span> to Completion
+            </h2>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0', position: 'relative' }}>
+            {process.map((step, i) => (
+              <div key={i} ref={addRef} className="reveal" style={{ padding: '2.5rem 2rem', transitionDelay: `${i * 0.1}s`, position: 'relative' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '1.2rem' }}>
+                  <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: 'linear-gradient(135deg, #D4A843, #F0C866)', flexShrink: 0 }} />
+                  <span className="gold-text" style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.8rem', fontWeight: '300' }}>{step.num}</span>
+                </div>
+                <h3 style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.4rem', fontWeight: '500', color: '#fff', marginBottom: '0.7rem' }}>{step.title}</h3>
+                <p style={{ fontFamily: 'var(--font-jost)', color: '#aaa', fontSize: '13px', lineHeight: '1.8', fontWeight: '300' }}>{step.desc}</p>
+                {i < process.length - 1 && (
+                  <div style={{ position: 'absolute', top: '2.5rem', right: 0, width: '1px', height: '60%', background: 'linear-gradient(to bottom, #D4A84344, transparent)' }} className="process-divider" />
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FEATURED PROJECTS ── */}
+      <section style={{ padding: '7rem 2rem', background: '#0a0a09' }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <div ref={addRef} className="reveal" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '3rem', flexWrap: 'wrap', gap: '1rem' }}>
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '1rem' }}>
-                <span style={{ display: 'block', width: '40px', height: '1px', background: '#C9A84C' }} />
-                <span style={{ fontFamily: 'var(--font-jost)', color: '#C9A84C', fontSize: '11px', letterSpacing: '0.4em', textTransform: 'uppercase', fontWeight: '500' }}>Portfolio</span>
-              </div>
-              <h2 style={{ fontFamily: 'var(--font-cormorant)', fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: '400', color: '#fff' }}>Featured Work</h2>
+              <SectionLabel text="Featured Work" />
+              <h2 style={{ fontFamily: 'var(--font-cormorant)', fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: '400', color: '#fff' }}>
+                Recent <span className="gold-text">Projects</span>
+              </h2>
             </div>
-            <Link href="/work" style={{
-              fontFamily: 'var(--font-jost)', fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase',
-              color: '#C9A84C', border: '1px solid #C9A84C44', padding: '11px 24px', textDecoration: 'none', fontWeight: '500',
-            }}>
+            <Link href="/work" style={{ fontFamily: 'var(--font-jost)', fontSize: '11px', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#D4A843', textDecoration: 'none', fontWeight: '500' }}>
               View All →
             </Link>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
             {projects.map((p, i) => (
               <div key={i} ref={addRef} className="reveal" style={{ transitionDelay: `${i * 0.1}s` }}>
-                <div style={{ position: 'relative', height: '320px', overflow: 'hidden', boxShadow: '0 8px 40px #C9A84C22' }}>
-                  <img
-                    src={p.image}
-                    alt={p.title}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.6s ease' }}
-                    onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.05)')}
-                    onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')}
-                  />
-                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, #0e0e0dcc 0%, transparent 60%)' }} />
-                  <div style={{ position: 'absolute', bottom: '1.2rem', left: '1.2rem' }}>
-                    <div style={{ fontFamily: 'var(--font-jost)', color: '#C9A84C', fontSize: '9px', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '4px', fontWeight: '500' }}>{p.category}</div>
+                <div style={{ overflow: 'hidden', boxShadow: '0 8px 40px rgba(212,168,67,0.1)' }}>
+                  <div style={{ position: 'relative', height: '240px', overflow: 'hidden' }}>
+                    <img src={p.image} alt={p.title} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.6s ease' }}
+                      onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.06)')}
+                      onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')} />
+                  </div>
+                  <div style={{ padding: '1.2rem 0', borderBottom: '1px solid #1a1a18' }}>
+                    <div style={{ fontFamily: 'var(--font-jost)', fontSize: '9px', letterSpacing: '0.25em', textTransform: 'uppercase', color: '#D4A843', marginBottom: '6px', fontWeight: '500' }}>{p.category}</div>
                     <div style={{ fontFamily: 'var(--font-cormorant)', color: '#fff', fontSize: '1.3rem', fontWeight: '500' }}>{p.title}</div>
                   </div>
                 </div>
@@ -202,70 +236,38 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ABOUT SNIPPET */}
-      <section style={{ padding: '7rem 2rem', background: '#111110' }}>
-        <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '5rem', alignItems: 'center' }}>
+      {/* ── TESTIMONIAL ── */}
+      <section style={{ padding: '6rem 2rem', background: '#0f0f0e', borderTop: '1px solid #D4A84318', borderBottom: '1px solid #D4A84318' }}>
+        <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
           <div ref={addRef} className="reveal">
-            <div style={{ position: 'relative', height: '480px', overflow: 'hidden', boxShadow: '0 12px 60px #C9A84C2a' }}>
-              <img
-                src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80"
-                alt="EMF team at work"
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-              />
-              <div style={{ position: 'absolute', bottom: '24px', left: '24px', background: '#C9A84C', padding: '14px 20px' }}>
-                <div style={{ fontFamily: 'var(--font-cormorant)', fontSize: '2.2rem', fontWeight: '600', color: '#111', lineHeight: 1 }}>15+</div>
-                <div style={{ fontFamily: 'var(--font-jost)', fontSize: '9px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#111a', fontWeight: '600' }}>Years of Excellence</div>
-              </div>
+            <div className="gold-text" style={{ fontFamily: 'var(--font-cormorant)', fontSize: '3rem', lineHeight: 1, marginBottom: '1.5rem', opacity: 0.6 }}>❝</div>
+            <blockquote style={{ fontFamily: 'var(--font-cormorant)', fontSize: 'clamp(1.3rem, 3vw, 1.9rem)', fontWeight: '400', color: '#f0f0f0', lineHeight: '1.6', marginBottom: '2rem', fontStyle: 'italic' }}>
+              EMF transformed our vision into a residence beyond what we imagined. Their attention to every detail — from the steelwork to the gold inlay — is unmatched.
+            </blockquote>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px' }}>
+              <div style={{ width: '30px', height: '1px', background: 'linear-gradient(to right, transparent, #D4A843)' }} />
+              <span style={{ fontFamily: 'var(--font-jost)', fontSize: '10px', letterSpacing: '0.3em', textTransform: 'uppercase', color: '#D4A843', fontWeight: '500' }}>Catherine M., Hillcrest Residence</span>
+              <div style={{ width: '30px', height: '1px', background: 'linear-gradient(to left, transparent, #D4A843)' }} />
             </div>
-          </div>
-
-          <div ref={addRef} className="reveal">
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '1.5rem' }}>
-              <span style={{ display: 'block', width: '40px', height: '1px', background: '#C9A84C' }} />
-              <span style={{ fontFamily: 'var(--font-jost)', color: '#C9A84C', fontSize: '11px', letterSpacing: '0.4em', textTransform: 'uppercase', fontWeight: '500' }}>Who We Are</span>
-            </div>
-            <h2 style={{ fontFamily: 'var(--font-cormorant)', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: '400', color: '#fff', marginBottom: '1.5rem', lineHeight: '1.2' }}>
-              Building the extraordinary,<br />one structure at a time.
-            </h2>
-            <p style={{ fontFamily: 'var(--font-jost)', color: '#bbb', fontSize: '14px', lineHeight: '1.9', fontWeight: '300', marginBottom: '1.2rem' }}>
-              Founded in 2009, EMF Constructions has grown from a boutique residential builder into one of the most respected construction firms in the region. Our work spans luxury homes, commercial landmarks, and everything in between.
-            </p>
-            <p style={{ fontFamily: 'var(--font-jost)', color: '#bbb', fontSize: '14px', lineHeight: '1.9', fontWeight: '300', marginBottom: '2rem' }}>
-              What sets us apart is our relentless attention to detail and belief that every client deserves a bespoke experience — from first meeting to final handover.
-            </p>
-            <Link href="/about" style={{
-              fontFamily: 'var(--font-jost)', fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase',
-              color: '#111', background: '#C9A84C', padding: '14px 32px', textDecoration: 'none', fontWeight: '600',
-              boxShadow: '0 4px 24px #C9A84C44', display: 'inline-block',
-            }}>
-              Our Story
-            </Link>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section style={{ padding: '8rem 2rem', background: '#0e0e0d', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+      {/* ── CTA ── */}
+      <section style={{ padding: '8rem 2rem', background: '#0a0a09', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0 }}>
-          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1400&q=80" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.07 }} />
-          <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at center, #C9A84C08 0%, transparent 60%)' }} />
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1400&q=80" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.06 }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at center, #D4A84308 0%, transparent 60%)' }} />
         </div>
         <div style={{ maxWidth: '700px', margin: '0 auto', position: 'relative' }}>
           <div ref={addRef} className="reveal">
-            <p style={{ fontFamily: 'var(--font-cormorant)', color: '#C9A84C', fontSize: '1.2rem', fontStyle: 'italic', marginBottom: '1rem' }}>Your Project Could Be</p>
-            <h2 style={{ fontFamily: 'var(--font-cormorant)', fontSize: 'clamp(3rem, 7vw, 5rem)', fontWeight: '400', color: '#fff', marginBottom: '1.5rem' }}>
-              Next<span style={{ color: '#C9A84C' }}>.</span>
+            <h2 style={{ fontFamily: 'var(--font-cormorant)', fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', fontWeight: '400', color: '#fff', marginBottom: '1.2rem', lineHeight: '1.1' }}>
+              Ready to <span className="gold-text">Build</span> Something Extraordinary?
             </h2>
             <p style={{ fontFamily: 'var(--font-jost)', color: '#bbb', fontSize: '15px', lineHeight: '1.8', fontWeight: '300', marginBottom: '2.5rem' }}>
-              Tell us about your vision — we'd be honoured to bring it to life.
+              Schedule a complimentary consultation with our team and let's bring your project to life.
             </p>
-            <Link href="/quote" style={{
-              fontFamily: 'var(--font-jost)', fontSize: '11px', letterSpacing: '0.25em', textTransform: 'uppercase',
-              color: '#111', background: '#C9A84C', padding: '18px 48px', textDecoration: 'none', fontWeight: '600',
-              boxShadow: '0 6px 40px #C9A84C55', display: 'inline-block',
-            }}>
-              Start a Conversation
-            </Link>
+            <Link href="/quote" className="btn-gold">Get a Free Quote →</Link>
           </div>
         </div>
       </section>
@@ -273,6 +275,7 @@ export default function HomePage() {
       <style jsx global>{`
         @media (max-width: 900px) {
           .services-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .process-divider { display: none !important; }
         }
         @media (max-width: 580px) {
           .services-grid { grid-template-columns: 1fr !important; }
