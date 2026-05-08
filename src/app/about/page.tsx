@@ -18,6 +18,8 @@ export default function AboutPage() {
     if (el && !revealRefs.current.includes(el)) revealRefs.current.push(el)
   }
 
+  const GoldLine = () => <span style={{ display: 'block', width: '40px', height: '1px', background: 'linear-gradient(to right, #D4A843, #F0C866)', flexShrink: 0 }} />
+
   const values = [
     { title: 'Craftsmanship', desc: 'Every joint, surface and finish is treated as a signature. We do not cut corners — ever.' },
     { title: 'Partnership', desc: 'Your vision drives every decision. We listen, advise, and build alongside you from day one.' },
@@ -27,25 +29,25 @@ export default function AboutPage() {
 
   return (
     <>
-      <section style={{ paddingTop: '140px', paddingBottom: '5rem', paddingLeft: '2rem', paddingRight: '2rem', textAlign: 'center', background: '#111110', position: 'relative' }}>
-        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '1px', background: 'linear-gradient(to right, transparent, #C9A84C44, transparent)' }} />
+      <section style={{ paddingTop: '140px', paddingBottom: '5rem', paddingLeft: '2rem', paddingRight: '2rem', textAlign: 'center', background: '#171717', position: 'relative' }}>
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '1px', background: 'linear-gradient(to right, transparent, #D4A84344, transparent)' }} />
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '16px', marginBottom: '1rem' }}>
-          <span style={{ display: 'block', width: '40px', height: '1px', background: '#C9A84C' }} />
-          <span style={{ fontFamily: 'var(--font-jost)', color: '#C9A84C', fontSize: '11px', letterSpacing: '0.4em', textTransform: 'uppercase', fontWeight: '500' }}>Our Story</span>
-          <span style={{ display: 'block', width: '40px', height: '1px', background: '#C9A84C' }} />
+          <GoldLine />
+          <span style={{ fontFamily: 'var(--font-jost)', color: '#D4A843', fontSize: '11px', letterSpacing: '0.4em', textTransform: 'uppercase', fontWeight: '500' }}>Our Story</span>
+          <GoldLine />
         </div>
         <h1 style={{ fontFamily: 'var(--font-cormorant)', fontSize: 'clamp(3rem, 7vw, 5.5rem)', fontWeight: '400', color: '#fff', marginBottom: '1.2rem' }}>
-          About <span style={{ color: '#C9A84C', fontStyle: 'italic' }}>EMF</span>
+          About <span className="gold-text" style={{ fontStyle: 'italic' }}>EMF</span>
         </h1>
       </section>
 
-      <section style={{ padding: '4rem 2rem 6rem', background: '#111110' }}>
+      <section style={{ padding: '4rem 2rem 6rem', background: '#171717' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '5rem', alignItems: 'center' }}>
           <div ref={addRef} className="reveal">
-            <div style={{ width: '100%', height: '480px', overflow: 'hidden', boxShadow: '0 12px 60px #C9A84C2a' }}>
+            <div style={{ width: '100%', height: '500px', overflow: 'hidden', boxShadow: '0 16px 60px rgba(212,168,67,0.15)' }}>
               <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80" alt="EMF team" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
-            <div style={{ background: '#C9A84C', padding: '14px 20px', display: 'inline-block', marginTop: '-2px' }}>
+            <div style={{ background: 'linear-gradient(135deg, #D4A843, #F0C866)', padding: '14px 20px', display: 'inline-block' }}>
               <div style={{ fontFamily: 'var(--font-cormorant)', fontSize: '2rem', fontWeight: '600', color: '#111', lineHeight: 1 }}>15+</div>
               <div style={{ fontFamily: 'var(--font-jost)', fontSize: '9px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#111a', fontWeight: '600' }}>Years of Excellence</div>
             </div>
@@ -53,46 +55,40 @@ export default function AboutPage() {
 
           <div ref={addRef} className="reveal">
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '1.5rem' }}>
-              <span style={{ display: 'block', width: '40px', height: '1px', background: '#C9A84C' }} />
-              <span style={{ fontFamily: 'var(--font-jost)', color: '#C9A84C', fontSize: '11px', letterSpacing: '0.4em', textTransform: 'uppercase', fontWeight: '500' }}>Who We Are</span>
+              <GoldLine />
+              <span style={{ fontFamily: 'var(--font-jost)', color: '#D4A843', fontSize: '11px', letterSpacing: '0.4em', textTransform: 'uppercase', fontWeight: '500' }}>Who We Are</span>
             </div>
-            <h2 style={{ fontFamily: 'var(--font-cormorant)', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: '400', color: '#fff', marginBottom: '1.5rem', lineHeight: '1.2' }}>
+            <h2 style={{ fontFamily: 'var(--font-cormorant)', fontSize: 'clamp(2rem, 4vw, 3.2rem)', fontWeight: '400', color: '#fff', marginBottom: '1.5rem', lineHeight: '1.2' }}>
               Building the extraordinary,<br />one structure at a time.
             </h2>
-            <p style={{ fontFamily: 'var(--font-jost)', color: '#bbb', fontSize: '14px', lineHeight: '1.9', fontWeight: '300', marginBottom: '1.2rem' }}>
+            <p style={{ fontFamily: 'var(--font-jost)', color: '#ccc', fontSize: '17px', lineHeight: '1.9', fontWeight: '300', marginBottom: '1.2rem' }}>
               Founded in 2009, EMF Constructions has grown from a boutique residential builder into one of the most respected construction firms in the region. Our work spans luxury homes, commercial landmarks, and everything in between.
             </p>
-            <p style={{ fontFamily: 'var(--font-jost)', color: '#bbb', fontSize: '14px', lineHeight: '1.9', fontWeight: '300', marginBottom: '2rem' }}>
+            <p style={{ fontFamily: 'var(--font-jost)', color: '#bbb', fontSize: '16px', lineHeight: '1.9', fontWeight: '300', marginBottom: '2.5rem' }}>
               What sets us apart is our relentless attention to detail and our belief that every client deserves a bespoke experience — from the first meeting to the final handover.
             </p>
-            <Link href="/quote" style={{
-              fontFamily: 'var(--font-jost)', fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase',
-              color: '#111', background: '#C9A84C', padding: '14px 32px', textDecoration: 'none', fontWeight: '600',
-              boxShadow: '0 4px 24px #C9A84C44', display: 'inline-block',
-            }}>
-              Work With Us
-            </Link>
+            <Link href="/quote" className="btn-gold">Work With Us</Link>
           </div>
         </div>
       </section>
 
-      <section style={{ padding: '6rem 2rem', background: '#0e0e0d' }}>
+      <section style={{ padding: '6rem 2rem 7rem', background: '#111110' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <div ref={addRef} className="reveal" style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '16px', marginBottom: '1rem' }}>
-              <span style={{ display: 'block', width: '40px', height: '1px', background: '#C9A84C' }} />
-              <span style={{ fontFamily: 'var(--font-jost)', color: '#C9A84C', fontSize: '11px', letterSpacing: '0.4em', textTransform: 'uppercase', fontWeight: '500' }}>What We Stand For</span>
-              <span style={{ display: 'block', width: '40px', height: '1px', background: '#C9A84C' }} />
+              <GoldLine />
+              <span style={{ fontFamily: 'var(--font-jost)', color: '#D4A843', fontSize: '11px', letterSpacing: '0.4em', textTransform: 'uppercase', fontWeight: '500' }}>What We Stand For</span>
+              <GoldLine />
             </div>
             <h2 style={{ fontFamily: 'var(--font-cormorant)', fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: '400', color: '#fff' }}>Our Values</h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1px', background: '#C9A84C18' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1px', background: '#D4A84318' }}>
             {values.map((v, i) => (
-              <div key={i} ref={addRef} className="reveal" style={{ padding: '2.5rem 2rem', background: '#0e0e0d', transitionDelay: `${i * 0.1}s` }}>
-                <div style={{ fontFamily: 'var(--font-cormorant)', color: '#C9A84C', fontSize: '2.5rem', fontWeight: '300', marginBottom: '1rem', opacity: 0.5 }}>0{i + 1}</div>
-                <h3 style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.5rem', fontWeight: '500', color: '#fff', marginBottom: '0.8rem' }}>{v.title}</h3>
-                <p style={{ fontFamily: 'var(--font-jost)', color: '#999', fontSize: '13px', lineHeight: '1.8', fontWeight: '300' }}>{v.desc}</p>
+              <div key={i} ref={addRef} className="reveal" style={{ padding: '2.8rem 2rem', background: '#111110', transitionDelay: `${i * 0.1}s` }}>
+                <div className="gold-text" style={{ fontFamily: 'var(--font-cormorant)', fontSize: '2.5rem', fontWeight: '300', marginBottom: '1rem', opacity: 0.5, lineHeight: 1 }}>0{i + 1}</div>
+                <h3 style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.55rem', fontWeight: '500', color: '#fff', marginBottom: '0.8rem' }}>{v.title}</h3>
+                <p style={{ fontFamily: 'var(--font-jost)', color: '#bbb', fontSize: '15px', lineHeight: '1.8', fontWeight: '300' }}>{v.desc}</p>
               </div>
             ))}
           </div>
