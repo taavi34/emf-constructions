@@ -18,26 +18,34 @@ const projects = [
 
 export default function WorkPage() {
   const [active, setActive] = useState('All')
-  const revealRefs = useRef<HTMLElement[]>([])
-  const filtered = active === 'All' ? projects : projects.filter(p => p.category === active)
+  const [visible, setVisible] = useState(false)
+  const headerRef = useRef<HTMLDivElement>(null)
 
+  // Fade in on page load
+  useEffect(() => {
+    const timer = setTimeout(() => setVisible(true), 100)
+    return () => clearTimeout(timer)
+  }, [])
+
+  // Page header reveal
   useEffect(() => {
     const observer = new IntersectionObserver(
       entries => entries.forEach(e => e.isIntersecting && e.target.classList.add('visible')),
       { threshold: 0.1 }
     )
-    revealRefs.current.forEach(el => el && observer.observe(el))
+    if (headerRef.current) observer.observe(headerRef.current)
     return () => observer.disconnect()
   }, [])
 
-  const addRef = (el: HTMLElement | null) => {
-    if (el && !revealRefs.current.includes(el)) revealRefs.current.push(el)
-  }
+  const filtered = active === 'All' ? projects : projects.filter(p => p.category === active)
 
-  const GoldLine = () => <span style={{ display: 'block', width: '40px', height: '1px', background: 'linear-gradient(to right, #D4A843, #F0C866)', flexShrink: 0 }} />
+  const GoldLine = () => (
+    <span style={{ display: 'block', width: '40px', height: '1px', background: 'linear-gradient(to right, #D4A843, #F0C866)', flexShrink: 0 }} />
+  )
 
   return (
     <>
+      {/* Header */}
       <section style={{ paddingTop: '140px', paddingBottom: '4rem', paddingLeft: '2rem', paddingRight: '2rem', textAlign: 'center', background: '#171717', position: 'relative' }}>
         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '1px', background: 'linear-gradient(to right, transparent, #D4A84344, transparent)' }} />
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '16px', marginBottom: '1rem' }}>
@@ -53,17 +61,31 @@ export default function WorkPage() {
         </p>
       </section>
 
-      <section style={{ background: '#171717', paddingBottom: '2rem', paddingLeft: '2rem', paddingRight: '2rem' }}>
+      {/* Filter tabs */}
+      <section style={{ background: '#171717', paddingBottom: '2.5rem', paddingLeft: '2rem', paddingRight: '2rem' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', overflowX: 'auto' }}>
           <div style={{ display: 'flex', gap: '0.5rem', minWidth: 'max-content' }}>
             {categories.map(cat => (
-              <button key={cat} onClick={() => setActive(cat)} style={{
-                fontFamily: 'var(--font-jost)', fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase',
-                padding: '10px 20px', border: active === cat ? '1px solid #D4A843' : '1px solid #2a2a28',
-                background: active === cat ? 'linear-gradient(135deg, #D4A843, #F0C866)' : 'transparent',
-                color: active === cat ? '#111' : '#999',
-                cursor: 'pointer', transition: 'all 0.3s', fontWeight: '500', whiteSpace: 'nowrap',
-              }}>
+              <button
+                key={cat}
+                onClick={() => setActive(cat)}
+                style={{
+                  fontFamily: 'var(--font-jost)',
+                  fontSize: '11px',
+                  letterSpacing: '0.2em',
+                  textTransform: 'uppercase',
+                  padding: '10px 20px',
+                  border: active === cat ? '1px solid #D4A843' : '1px solid #2a2a28',
+                  background: active === cat
+                    ? 'linear-gradient(135deg, #D4A843, #F0C866)'
+                    : 'transparent',
+                  color: active === cat ? '#111' : '#999',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s',
+                  fontWeight: '500',
+                  whiteSpace: 'nowrap',
+                }}
+              >
                 {cat}
               </button>
             ))}
@@ -71,40 +93,89 @@ export default function WorkPage() {
         </div>
       </section>
 
-      <section style={{ padding: '1rem 2rem 7rem', background: '#171717' }}>
-        <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '2rem' }}>
-          {filtered.map((project, i) => (
-            <div key={`${project.title}-${i}`} ref={addRef} className="reveal" style={{ transitionDelay: `${(i % 3) * 0.1}s` }}>
-              <div style={{ background: '#0f0f0f', overflow: 'hidden', boxShadow: '0 8px 40px rgba(212,168,67,0.1)' }}>
-                <div style={{ position: 'relative', height: '260px', overflow: 'hidden' }}>
-                  <img src={project.image} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.6s ease' }}
-                    onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.05)')}
-                    onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')} />
-                  <div style={{ position: 'absolute', top: '16px', left: '16px', background: '#111110cc', backdropFilter: 'blur(4px)', border: '1px solid #D4A84344', padding: '4px 12px', fontFamily: 'var(--font-jost)', fontSize: '9px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#D4A843', fontWeight: '500' }}>
-                    {project.category}
+      {/* Project grid — NO reveal class on cards, just a simple fade on the grid */}
+      <section style={{ padding: '0 2rem 7rem', background: '#171717' }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
+              gap: '2rem',
+              opacity: visible ? 1 : 0,
+              transition: 'opacity 0.4s ease',
+            }}
+          >
+            {filtered.map((project, i) => (
+              <div
+                key={`${project.title}`}
+                style={{
+                  opacity: 1,
+                  transform: 'none',
+                  animation: `cardFadeIn 0.4s ease ${i * 0.06}s both`,
+                }}
+              >
+                <div style={{ background: '#0f0f0f', overflow: 'hidden', boxShadow: '0 8px 40px rgba(212,168,67,0.1)', height: '100%' }}>
+                  {/* Image */}
+                  <div style={{ position: 'relative', height: '260px', overflow: 'hidden' }}>
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.6s ease', display: 'block' }}
+                      onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.05)')}
+                      onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')}
+                    />
+                    {/* Category badge */}
+                    <div style={{
+                      position: 'absolute', top: '16px', left: '16px',
+                      background: 'rgba(15,15,15,0.85)',
+                      backdropFilter: 'blur(4px)',
+                      border: '1px solid #D4A84344',
+                      padding: '4px 12px',
+                      fontFamily: 'var(--font-jost)', fontSize: '9px',
+                      letterSpacing: '0.2em', textTransform: 'uppercase',
+                      color: '#D4A843', fontWeight: '500',
+                    }}>
+                      {project.category}
+                    </div>
                   </div>
-                </div>
-                <div style={{ padding: '1.5rem' }}>
-                  <h3 style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.5rem', fontWeight: '500', color: '#fff', marginBottom: '0.6rem' }}>{project.title}</h3>
-                  <p style={{ fontFamily: 'var(--font-jost)', color: '#bbb', fontSize: '15px', lineHeight: '1.7', fontWeight: '300', marginBottom: '1rem' }}>{project.desc}</p>
-                  <div style={{ display: 'flex', gap: '1.5rem' }}>
-                    <span style={{ fontFamily: 'var(--font-jost)', color: '#666', fontSize: '12px' }}>📍 {project.location}</span>
-                    <span style={{ fontFamily: 'var(--font-jost)', color: '#666', fontSize: '12px' }}>🗓 {project.year}</span>
+
+                  {/* Info */}
+                  <div style={{ padding: '1.5rem' }}>
+                    <h3 style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.5rem', fontWeight: '500', color: '#fff', marginBottom: '0.6rem' }}>
+                      {project.title}
+                    </h3>
+                    <p style={{ fontFamily: 'var(--font-jost)', color: '#bbb', fontSize: '15px', lineHeight: '1.7', fontWeight: '300', marginBottom: '1rem' }}>
+                      {project.desc}
+                    </p>
+                    <div style={{ display: 'flex', gap: '1.5rem' }}>
+                      <span style={{ fontFamily: 'var(--font-jost)', color: '#666', fontSize: '12px' }}>📍 {project.location}</span>
+                      <span style={{ fontFamily: 'var(--font-jost)', color: '#666', fontSize: '12px' }}>🗓 {project.year}</span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
+      {/* Bottom CTA */}
       <section style={{ padding: '6rem 2rem', background: '#111110', textAlign: 'center' }}>
         <p style={{ fontFamily: 'var(--font-cormorant)', color: '#fff', fontSize: 'clamp(2rem, 4vw, 3.2rem)', fontWeight: '400', marginBottom: '1rem' }}>
           Your Project Could Be <span className="gold-text" style={{ fontStyle: 'italic' }}>Next.</span>
         </p>
-        <p style={{ fontFamily: 'var(--font-jost)', color: '#bbb', fontSize: '17px', marginBottom: '2.5rem', fontWeight: '300' }}>Tell us about your vision — we'd be honoured to bring it to life.</p>
+        <p style={{ fontFamily: 'var(--font-jost)', color: '#bbb', fontSize: '17px', marginBottom: '2.5rem', fontWeight: '300' }}>
+          Tell us about your vision — we'd be honoured to bring it to life.
+        </p>
         <Link href="/quote" className="btn-gold">Start a Conversation →</Link>
       </section>
+
+      <style jsx global>{`
+        @keyframes cardFadeIn {
+          from { opacity: 0; transform: translateY(16px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
     </>
   )
 }
