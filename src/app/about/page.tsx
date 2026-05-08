@@ -62,7 +62,7 @@ export default function AboutPage() {
               Building the extraordinary,<br />one structure at a time.
             </h2>
             <p style={{ fontFamily: 'var(--font-jost)', color: '#ccc', fontSize: '17px', lineHeight: '1.9', fontWeight: '300', marginBottom: '1.2rem' }}>
-              Founded in 2009, EMF Constructions has grown from a boutique residential builder into one of the most respected construction firms in the region. Our work spans luxury homes, commercial landmarks, and everything in between.
+              Founded in 2009, EMF Contracting has grown from a boutique residential builder into one of the most respected construction firms in the region. Our work spans luxury homes, commercial landmarks, and everything in between.
             </p>
             <p style={{ fontFamily: 'var(--font-jost)', color: '#bbb', fontSize: '16px', lineHeight: '1.9', fontWeight: '300', marginBottom: '2.5rem' }}>
               What sets us apart is our relentless attention to detail and our belief that every client deserves a bespoke experience — from the first meeting to the final handover.

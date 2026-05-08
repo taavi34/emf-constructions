@@ -48,7 +48,7 @@ export async function POST(req: NextRequest) {
             <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; background: #111110; color: #e5e5e5; padding: 40px;">
               <div style="border-left: 3px solid #C9A84C; padding-left: 20px; margin-bottom: 30px;">
                 <h1 style="color: #C9A84C; font-size: 24px; margin: 0 0 4px;">New Quote Request</h1>
-                <p style="color: #666; margin: 0; font-size: 14px;">EMF Constructions</p>
+                <p style="color: #666; margin: 0; font-size: 14px;">EMF Contracting</p>
               </div>
               <table style="width: 100%; border-collapse: collapse;">
                 ${[
@@ -77,17 +77,17 @@ export async function POST(req: NextRequest) {
         await resend.emails.send({
           from: 'onboarding@resend.dev',
           to: email,
-          subject: 'We received your enquiry — EMF Constructions',
+          subject: 'We received your enquiry — EMF Contracting',
           html: `
             <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; background: #111110; color: #e5e5e5; padding: 40px;">
               <div style="text-align: center; margin-bottom: 30px;">
-                <h1 style="color: #C9A84C; font-size: 28px; font-weight: 300; margin: 0 0 8px;">EMF Constructions</h1>
+                <h1 style="color: #C9A84C; font-size: 28px; font-weight: 300; margin: 0 0 8px;">EMF Contracting</h1>
                 <p style="color: #555; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; margin: 0;">Building Excellence</p>
               </div>
               <p style="color: #e5e5e5; font-size: 15px; line-height: 1.8;">Dear ${name},</p>
               <p style="color: #bbb; font-size: 14px; line-height: 1.8;">Thank you for reaching out. We have received your enquiry and a member of our team will be in touch within <strong style="color: #C9A84C;">24 hours</strong> to discuss your project.</p>
               <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #222; color: #444; font-size: 12px;">
-                <p style="margin: 0;">EMF Constructions · hello@emfconstructions.com</p>
+                <p style="margin: 0;">EMF Contracting · hello@emfcontracting.com</p>
               </div>
             </div>
           `,

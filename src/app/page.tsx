@@ -140,7 +140,7 @@ export default function HomePage() {
             </h2>
             <div style={{ width: '50px', height: '2px', background: 'linear-gradient(to right, #D4A843, #F0C866)', margin: '1.8rem 0' }} />
             <p style={{ fontFamily: 'var(--font-jost)', color: '#ccc', fontSize: '17px', lineHeight: '1.9', fontWeight: '300', marginBottom: '1.2rem' }}>
-              EMF Constructions was founded on a simple principle: every detail matters. From the first sketch to the final walk-through, our team treats your project as our own — combining heritage craftsmanship with modern engineering.
+              EMF Contracting was founded on a simple principle: every detail matters. From the first sketch to the final walk-through, our team treats your project as our own — combining heritage craftsmanship with modern engineering.
             </p>
             <p style={{ fontFamily: 'var(--font-jost)', color: '#bbb', fontSize: '16px', lineHeight: '1.9', fontWeight: '300', marginBottom: '2.5rem' }}>
               We partner with leading architects, designers and trades to deliver landmark buildings, luxury residences and refined renovations across the region.

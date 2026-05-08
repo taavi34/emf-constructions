@@ -134,7 +134,7 @@ export default function QuotePage() {
               </div>
               {[
                 { icon: '📞', label: 'Phone', value: '+1 (555) 123-4567' },
-                { icon: '✉️', label: 'Email', value: 'hello@emfconstructions.com' },
+                { icon: '✉️', label: 'Email', value: 'hello@emfcontracting.com' },
                 { icon: '📍', label: 'Address', value: '1240 Oak Avenue, Suite 300' },
                 { icon: '🕐', label: 'Hours', value: 'Mon–Fri, 8am–6pm' },
               ].map((item, i) => (

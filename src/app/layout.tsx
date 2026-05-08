@@ -5,8 +5,8 @@ import Footer from '@/components/Footer'
 import CookieBanner from '@/components/CookieBanner'
 
 export const metadata: Metadata = {
-  title: 'EMF Constructions — Building Excellence',
-  description: 'Crafting timeless structures with uncompromising quality. From luxury residences to commercial landmarks — EMF Constructions brings vision to reality.',
+  title: 'EMF Contracting — Building Excellence',
+  description: 'Crafting timeless structures with uncompromising quality. From luxury residences to commercial landmarks — EMF Contracting brings vision to reality.',
   keywords: 'construction, luxury residential, commercial, interior renovation, custom carpentry',
 }
 

@@ -22,7 +22,7 @@ export default function CookiePolicyPage() {
             },
             {
               title: 'How We Use Cookies',
-              body: 'EMF Constructions uses cookies solely to ensure the website functions correctly. We do not use cookies for advertising, tracking across other websites, or selling data to third parties. The cookies we set are essential for basic site functionality such as navigation and form submission.',
+              body: 'EMF Contracting uses cookies solely to ensure the website functions correctly. We do not use cookies for advertising, tracking across other websites, or selling data to third parties. The cookies we set are essential for basic site functionality such as navigation and form submission.',
             },
             {
               title: 'Types of Cookies We Use',
@@ -42,7 +42,7 @@ export default function CookiePolicyPage() {
             },
             {
               title: 'Contact Us',
-              body: 'If you have any questions about our use of cookies or this policy, please contact us at hello@emfconstructions.com or through our Get a Quote page.',
+              body: 'If you have any questions about our use of cookies or this policy, please contact us at hello@emfcontracting.com or through our Get a Quote page.',
             },
           ].map((section, i) => (
             <div key={i} style={{ marginBottom: '2.5rem', paddingBottom: '2.5rem', borderBottom: i < 6 ? '1px solid #1e1e1c' : 'none' }}>
