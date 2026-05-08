@@ -43,7 +43,7 @@ export default function Navbar() {
           }}>E</div>
           <div>
             <div style={{ fontFamily: 'var(--font-cormorant)', fontSize: '15px', fontWeight: '600', letterSpacing: '0.15em', lineHeight: 1, background: 'linear-gradient(135deg, #D4A843, #F0C866)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>EMF</div>
-            <div style={{ fontFamily: 'var(--font-jost)', color: '#666', fontSize: '9px', fontWeight: '400', letterSpacing: '0.25em', textTransform: 'uppercase' }}>Constructions</div>
+            <div style={{ fontFamily: 'var(--font-jost)', color: '#666', fontSize: '9px', fontWeight: '400', letterSpacing: '0.25em', textTransform: 'uppercase' }}>Contracting</div>
           </div>
         </Link>
 
