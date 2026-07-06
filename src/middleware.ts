@@ -111,7 +111,7 @@ export async function middleware(req: NextRequest) {
     const submitted = formData.get('password')?.toString() ?? ''
 
     if (submitted === password) {
-      const res = NextResponse.redirect(new URL(req.nextUrl.pathname, req.url))
+      const res = NextResponse.redirect(new URL(req.nextUrl.pathname, req.url), 303)
       res.cookies.set(COOKIE_NAME, expectedHash, {
         httpOnly: true,
         secure: true,
