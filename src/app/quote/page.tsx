@@ -3,7 +3,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 
 export default function QuotePage() {
-  const [form, setForm] = useState({ name: '', email: '', phone: '', projectType: '', budget: '', location: '', message: '' })
+  const [form, setForm] = useState({ name: '', email: '', phone: '', projectType: '', location: '', message: '' })
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -15,7 +15,7 @@ export default function QuotePage() {
     setStatus('loading')
     try {
       const res = await fetch('/api/quote', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(form) })
-      if (res.ok) { setStatus('success'); setForm({ name: '', email: '', phone: '', projectType: '', budget: '', location: '', message: '' }) }
+      if (res.ok) { setStatus('success'); setForm({ name: '', email: '', phone: '', projectType: '', location: '', message: '' }) }
       else setStatus('error')
     } catch { setStatus('error') }
   }
@@ -88,25 +88,11 @@ export default function QuotePage() {
                   <label style={labelStyle}>Project Type *</label>
                   <select name="projectType" value={form.projectType} onChange={handleChange} required style={{ ...inputStyle, cursor: 'pointer' }}>
                     <option value="">Select a category</option>
-                    <option>Luxury Residential</option>
-                    <option>Interior Renovation</option>
-                    <option>Commercial</option>
                     <option>New Build</option>
-                    <option>Luxury Renovation</option>
-                    <option>Custom Carpentry</option>
+                    <option>Residential Construction</option>
+                    <option>Commercial Construction</option>
+                    <option>Civil Construction</option>
                     <option>Other</option>
-                  </select>
-                </div>
-                <div>
-                  <label style={labelStyle}>Estimated Budget</label>
-                  <select name="budget" value={form.budget} onChange={handleChange} style={{ ...inputStyle, cursor: 'pointer' }}>
-                    <option value="">Select a range</option>
-                    <option>Under $100,000</option>
-                    <option>$100,000 – $500,000</option>
-                    <option>$500,000 – $1,000,000</option>
-                    <option>$1,000,000 – $5,000,000</option>
-                    <option>$5,000,000+</option>
-                    <option>To Be Discussed</option>
                   </select>
                 </div>
                 <div>
@@ -136,7 +122,6 @@ export default function QuotePage() {
                 { icon: '📞', label: 'Phone', value: '+61 478 685 503' },
                 { icon: '✉️', label: 'Email', value: 'Email coming soon' },
                 { icon: '📍', label: 'Address', value: 'Perth, Western Australia (City & Rural)' },
-                { icon: '🕐', label: 'Hours', value: 'Mon–Fri, 8am–6pm' },
               ].map((item, i) => (
                 <div key={i} style={{ display: 'flex', gap: '1rem', marginBottom: '1.5rem', alignItems: 'flex-start' }}>
                   <span style={{ fontSize: '18px', marginTop: '2px' }}>{item.icon}</span>
