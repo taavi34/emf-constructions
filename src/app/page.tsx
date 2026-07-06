@@ -97,7 +97,6 @@ export default function HomePage() {
             <div key={i} style={{ padding: '1.2rem 0' }}>
               <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'center', gap: '2px', lineHeight: 1.1, paddingBottom: '4px' }}>
                 <span className="gold-text" style={{ fontFamily: 'var(--font-cormorant)', fontSize: '3.2rem', fontWeight: '600' }}>{s.value}</span>
-                {s.star && <span className="gold-text" style={{ fontFamily: 'var(--font-cormorant)', fontSize: '2rem', fontWeight: '600' }}>★</span>}
               </div>
               <div style={{ fontFamily: 'var(--font-jost)', fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#999', marginTop: '8px', fontWeight: '500' }}>{s.label}</div>
             </div>
