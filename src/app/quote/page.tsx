@@ -59,7 +59,7 @@ export default function QuotePage() {
                 <div className="gold-text" style={{ fontFamily: 'var(--font-cormorant)', fontSize: '3rem', marginBottom: '1rem' }}>✦</div>
                 <h3 style={{ fontFamily: 'var(--font-cormorant)', fontSize: '2rem', color: '#fff', marginBottom: '1rem', fontWeight: '400' }}>Thank You</h3>
                 <p style={{ fontFamily: 'var(--font-jost)', color: '#bbb', fontSize: '16px', lineHeight: '1.8', fontWeight: '300' }}>
-                  Thanks for reaching out — we've received your request and will be in touch soon.
+                  Thanks for reaching out. We've received your request and will be in touch soon.
                 </p>
               </div>
             ) : (
@@ -135,7 +135,7 @@ export default function QuotePage() {
               {[
                 { icon: '📞', label: 'Phone', value: '+61 478 685 503' },
                 { icon: '✉️', label: 'Email', value: 'Email coming soon' },
-                { icon: '📍', label: 'Address', value: 'Perth, Western Australia — City & Rural' },
+                { icon: '📍', label: 'Address', value: 'Perth, Western Australia (City & Rural)' },
                 { icon: '🕐', label: 'Hours', value: 'Mon–Fri, 8am–6pm' },
               ].map((item, i) => (
                 <div key={i} style={{ display: 'flex', gap: '1rem', marginBottom: '1.5rem', alignItems: 'flex-start' }}>
