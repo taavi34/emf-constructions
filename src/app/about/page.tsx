@@ -48,8 +48,8 @@ export default function AboutPage() {
               <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80" alt="EMF team" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
             <div style={{ background: 'linear-gradient(135deg, #D4A843, #F0C866)', padding: '14px 20px', display: 'inline-block' }}>
-              <div style={{ fontFamily: 'var(--font-cormorant)', fontSize: '2rem', fontWeight: '600', color: '#111', lineHeight: 1 }}>15+</div>
-              <div style={{ fontFamily: 'var(--font-jost)', fontSize: '9px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#111a', fontWeight: '600' }}>Years of Excellence</div>
+              <div style={{ fontFamily: 'var(--font-cormorant)', fontSize: '2rem', fontWeight: '600', color: '#111', lineHeight: 1 }}>90+</div>
+              <div style={{ fontFamily: 'var(--font-jost)', fontSize: '9px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#111a', fontWeight: '600' }}>Years Combined Experience</div>
             </div>
           </div>
 
@@ -62,10 +62,10 @@ export default function AboutPage() {
               Building the extraordinary,<br />one structure at a time.
             </h2>
             <p style={{ fontFamily: 'var(--font-jost)', color: '#ccc', fontSize: '17px', lineHeight: '1.9', fontWeight: '300', marginBottom: '1.2rem' }}>
-              Founded in 2009, EMF Contracting has grown from a boutique residential builder into one of the most respected construction firms in the region. Our work spans luxury homes, commercial landmarks, and everything in between.
+              EMF Contracting handles all aspects of construction and management for clients across Perth — city and rural — backed by a team with over 90 years of combined experience in the building and construction industry. Our work spans new builds, residential construction, commercial construction and civil construction.
             </p>
             <p style={{ fontFamily: 'var(--font-jost)', color: '#bbb', fontSize: '16px', lineHeight: '1.9', fontWeight: '300', marginBottom: '2.5rem' }}>
-              What sets us apart is our relentless attention to detail and our belief that every client deserves a bespoke experience — from the first meeting to the final handover.
+              We're fully licensed and insured. Every project starts with an on-site, face-to-face meeting, moves through planning and design until the vision is right, and is delivered on time and on budget — with honest, direct communication the whole way through.
             </p>
             <Link href="/quote" className="btn-gold">Work With Us</Link>
           </div>
