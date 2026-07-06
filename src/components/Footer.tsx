@@ -57,9 +57,14 @@ export default function Footer() {
           <p style={{ fontFamily: 'var(--font-jost)', color: '#444', fontSize: '11px', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
             © 2026 EMF Contracting. All Rights Reserved
           </p>
-          <Link href="/cookies" style={{ fontFamily: 'var(--font-jost)', color: '#555', fontSize: '11px', letterSpacing: '0.1em', textDecoration: 'none', textTransform: 'uppercase', transition: 'color 0.3s' }}>
-            Cookie Policy
-          </Link>
+          <div style={{ display: 'flex', gap: '1.5rem' }}>
+            <Link href="/cookies" style={{ fontFamily: 'var(--font-jost)', color: '#555', fontSize: '11px', letterSpacing: '0.1em', textDecoration: 'none', textTransform: 'uppercase', transition: 'color 0.3s' }}>
+              Cookie Policy
+            </Link>
+            <Link href="/privacy" style={{ fontFamily: 'var(--font-jost)', color: '#555', fontSize: '11px', letterSpacing: '0.1em', textDecoration: 'none', textTransform: 'uppercase', transition: 'color 0.3s' }}>
+              Privacy Policy
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
