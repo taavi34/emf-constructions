@@ -42,7 +42,7 @@ export default function CookiePolicyPage() {
             },
             {
               title: 'Contact Us',
-              body: 'If you have any questions about our use of cookies or this policy, please contact us at hello@emfcontracting.com or through our Get a Quote page.',
+              body: 'If you have any questions about our use of cookies or this policy, please contact us through our Get a Quote page.',
             },
           ].map((section, i) => (
             <div key={i} style={{ marginBottom: '2.5rem', paddingBottom: '2.5rem', borderBottom: i < 6 ? '1px solid #1e1e1c' : 'none' }}>
