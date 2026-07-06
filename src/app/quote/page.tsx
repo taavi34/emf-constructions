@@ -46,7 +46,7 @@ export default function QuotePage() {
           Get a <span className="gold-text" style={{ fontStyle: 'italic' }}>Quote</span>
         </h1>
         <p style={{ fontFamily: 'var(--font-jost)', color: '#bbb', fontSize: '17px', lineHeight: '1.9', fontWeight: '300', maxWidth: '480px', margin: '0 auto' }}>
-          Share your vision with us. We'll get back to you within 24 hours with an honest assessment and next steps.
+          Share your vision with us. We'll get back to you with an honest assessment and next steps.
         </p>
       </section>
 
@@ -59,7 +59,7 @@ export default function QuotePage() {
                 <div className="gold-text" style={{ fontFamily: 'var(--font-cormorant)', fontSize: '3rem', marginBottom: '1rem' }}>✦</div>
                 <h3 style={{ fontFamily: 'var(--font-cormorant)', fontSize: '2rem', color: '#fff', marginBottom: '1rem', fontWeight: '400' }}>Thank You</h3>
                 <p style={{ fontFamily: 'var(--font-jost)', color: '#bbb', fontSize: '16px', lineHeight: '1.8', fontWeight: '300' }}>
-                  Your enquiry has been received. A member of our team will be in touch within 24 hours.
+                  Thanks for reaching out — we've received your request and will be in touch soon.
                 </p>
               </div>
             ) : (
@@ -133,9 +133,9 @@ export default function QuotePage() {
                 <span style={{ fontFamily: 'var(--font-jost)', color: '#D4A843', fontSize: '11px', letterSpacing: '0.3em', textTransform: 'uppercase', fontWeight: '500' }}>Contact</span>
               </div>
               {[
-                { icon: '📞', label: 'Phone', value: '+1 (555) 123-4567' },
-                { icon: '✉️', label: 'Email', value: 'hello@emfcontracting.com' },
-                { icon: '📍', label: 'Address', value: '1240 Oak Avenue, Suite 300' },
+                { icon: '📞', label: 'Phone', value: '+61 478 685 503' },
+                { icon: '✉️', label: 'Email', value: 'Email coming soon' },
+                { icon: '📍', label: 'Address', value: 'Perth, Western Australia — City & Rural' },
                 { icon: '🕐', label: 'Hours', value: 'Mon–Fri, 8am–6pm' },
               ].map((item, i) => (
                 <div key={i} style={{ display: 'flex', gap: '1rem', marginBottom: '1.5rem', alignItems: 'flex-start' }}>
@@ -150,7 +150,7 @@ export default function QuotePage() {
 
             <div style={{ padding: '2rem', border: '1px solid #D4A84322', background: '#1a1a18' }}>
               <div className="gold-text" style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.4rem', fontStyle: 'italic', marginBottom: '1.2rem' }}>What to Expect</div>
-              {['Response within 24 hours', 'Free initial consultation', 'Detailed project assessment', 'No obligation quote'].map((item, i) => (
+              {['On-site, face-to-face consultation', 'Free initial consultation', 'Detailed project assessment', 'No obligation quote'].map((item, i) => (
                 <div key={i} style={{ display: 'flex', gap: '12px', marginBottom: '0.8rem', alignItems: 'center' }}>
                   <span style={{ display: 'block', width: '16px', height: '1px', background: 'linear-gradient(to right, #D4A843, #F0C866)', flexShrink: 0 }} />
                   <span style={{ fontFamily: 'var(--font-jost)', color: '#ccc', fontSize: '15px', fontWeight: '300' }}>{item}</span>
