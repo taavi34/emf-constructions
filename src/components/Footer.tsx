@@ -16,7 +16,7 @@ export default function Footer() {
               </div>
             </div>
             <p style={{ fontFamily: 'var(--font-jost)', color: '#888', fontSize: '13px', lineHeight: '1.8', fontWeight: '300', maxWidth: '260px' }}>
-              Crafting timeless structures with uncompromising quality. From luxury residences to commercial landmarks — EMF Contracting brings vision to reality.
+              New builds, residential, commercial and civil construction across Perth — backed by over 90 years of combined industry experience.
             </p>
           </div>
 
@@ -41,9 +41,9 @@ export default function Footer() {
           <div>
             <h4 style={{ fontFamily: 'var(--font-jost)', color: '#ccc', fontSize: '10px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '1.2rem', fontWeight: '500' }}>Contact</h4>
             {[
-              { icon: '📞', text: '+1 (555) 123-4567' },
-              { icon: '✉️', text: 'hello@emfcontracting.com' },
-              { icon: '📍', text: '1240 Oak Avenue, Suite 300' },
+              { icon: '📞', text: '+61 478 685 503' },
+              { icon: '✉️', text: 'Email coming soon' },
+              { icon: '📍', text: 'Perth, WA — City & Rural' },
             ].map((item, i) => (
               <div key={i} style={{ display: 'flex', gap: '10px', marginBottom: '0.8rem', alignItems: 'flex-start' }}>
                 <span style={{ fontSize: '12px' }}>{item.icon}</span>
