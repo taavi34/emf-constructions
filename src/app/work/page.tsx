@@ -12,9 +12,9 @@ type Project = {
 }
 
 const projects: Project[] = [
-  { title: 'Henderson Warehouse Refurbishment', slug: 'henderson-warehouse-refurbishment', category: 'Commercial', desc: 'A 2,000 sqm warehouse renovation and refurbishment in Henderson.', location: 'Henderson, WA', year: '', size: '2,000 sqm', duration: '', image: 'https://images.unsplash.com/photo-1565636291661-2ba5f34d2d40?w=800&q=80', details: 'A large-scale renovation and refurbishment of a 2,000 sqm warehouse in Henderson, delivered with the same on-site, hands-on approach EMF Contracting brings to every project — clear communication and a build kept on time and on budget.', highlights: ['2,000 sqm warehouse footprint', 'Full renovation and refurbishment scope', 'On-site project management throughout'], images: ['https://images.unsplash.com/photo-1565636291661-2ba5f34d2d40?w=1200&q=80'] },
-  { title: 'Residential Renovations', slug: 'residential-renovations', category: 'Residential', desc: 'Residential renovation projects across the Perth metro and rural area.', location: 'Perth, WA', year: '', size: '', duration: '', image: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=800&q=80', details: 'Residential renovation work carried out across the Perth area, with the same face-to-face, client-first process used on every EMF Contracting project — an on-site meeting from the start, planning and design through to the client\'s desired vision, and honest communication along the way.', highlights: ['On-site consultation from the first meeting', 'Planning and design tailored to the client\'s vision', 'Delivered on time and on budget'], images: ['https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=1200&q=80'] },
-  { title: 'Greylands Hospital Concreting', slug: 'greylands-hospital-concreting', category: 'Civil', desc: 'Concreting works carried out at Greylands Hospital.', location: 'Perth, WA', year: '', size: '', duration: '', image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80', details: 'Civil concreting works completed at Greylands Hospital — one of the projects EMF Contracting is proudest to showcase, reflecting the team\'s depth of experience across civil and institutional construction.', highlights: ['Civil / institutional concreting scope', 'Completed at a live hospital site', 'One of EMF Contracting\'s flagship projects'], images: ['https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&q=80'] },
+  { title: 'Henderson Warehouse Refurbishment', slug: 'henderson-warehouse-refurbishment', category: 'Commercial', desc: 'A 2,000 sqm warehouse renovation and refurbishment in Henderson.', location: 'Henderson, WA', year: '', size: '2,000 sqm', duration: '', image: 'https://images.unsplash.com/photo-1565636291661-2ba5f34d2d40?w=800&q=80', details: 'A large-scale renovation and refurbishment of a 2,000 sqm warehouse in Henderson, delivered with the same on-site, hands-on approach EMF Contracting brings to every project. Clear communication and a build kept on time and on budget.', highlights: ['2,000 sqm warehouse footprint', 'Full renovation and refurbishment scope', 'On-site project management throughout'], images: ['https://images.unsplash.com/photo-1565636291661-2ba5f34d2d40?w=1200&q=80'] },
+  { title: 'Residential Renovations', slug: 'residential-renovations', category: 'Residential', desc: 'Residential renovation projects across the Perth metro and rural area.', location: 'Perth, WA', year: '', size: '', duration: '', image: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=800&q=80', details: 'Residential renovation work carried out across the Perth area, with the same face-to-face, client-first process used on every EMF Contracting project. An on-site meeting from the start, planning and design through to the client\'s desired vision, and honest communication along the way.', highlights: ['On-site consultation from the first meeting', 'Planning and design tailored to the client\'s vision', 'Delivered on time and on budget'], images: ['https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=1200&q=80'] },
+  { title: 'Greylands Hospital Concreting', slug: 'greylands-hospital-concreting', category: 'Civil', desc: 'Concreting works carried out at Greylands Hospital.', location: 'Perth, WA', year: '', size: '', duration: '', image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80', details: 'Civil concreting works completed at Greylands Hospital, one of the projects EMF Contracting is proudest to showcase, reflecting the team\'s depth of experience across civil and institutional construction.', highlights: ['Civil / institutional concreting scope', 'Completed at a live hospital site', 'One of EMF Contracting\'s flagship projects'], images: ['https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&q=80'] },
 ]
 
 function WorkContent() {
@@ -70,7 +70,7 @@ function WorkContent() {
           Work <span className="gold-text" style={{ fontStyle: 'italic' }}>Done</span>
         </h1>
         <p style={{ fontFamily: 'var(--font-jost)', color: '#bbb', fontSize: '17px', lineHeight: '1.9', fontWeight: '300', maxWidth: '500px', margin: '0 auto' }}>
-          A curated selection of completed projects — each one a testament to craftsmanship, partnership, and pride.
+          A curated selection of completed projects, each one a testament to craftsmanship, partnership, and pride.
         </p>
       </section>
 
@@ -101,7 +101,7 @@ function WorkContent() {
                     <img src={project.image} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.6s', display: 'block' }}
                       onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.05)')}
                       onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')} />
-                    {/* Hover darkening only — no text */}
+                    {/* Hover darkening only, no text */}
                     <div style={{ position: 'absolute', inset: 0, background: 'transparent', transition: 'background 0.35s' }}
                       onMouseEnter={e => (e.currentTarget.style.background = 'rgba(0,0,0,0.28)')}
                       onMouseLeave={e => (e.currentTarget.style.background = 'transparent')} />
@@ -128,7 +128,7 @@ function WorkContent() {
         <p style={{ fontFamily: 'var(--font-cormorant)', color: '#fff', fontSize: 'clamp(2rem, 4vw, 3.2rem)', fontWeight: '400', marginBottom: '1rem' }}>
           Your Project Could Be <span className="gold-text" style={{ fontStyle: 'italic' }}>Next.</span>
         </p>
-        <p style={{ fontFamily: 'var(--font-jost)', color: '#bbb', fontSize: '17px', marginBottom: '2.5rem', fontWeight: '300' }}>Tell us about your vision — we'd be honoured to bring it to life.</p>
+        <p style={{ fontFamily: 'var(--font-jost)', color: '#bbb', fontSize: '17px', marginBottom: '2.5rem', fontWeight: '300' }}>Tell us about your vision, we'd be honoured to bring it to life.</p>
         <Link href="/quote" className="btn-gold">Start a Conversation</Link>
       </section>
 
