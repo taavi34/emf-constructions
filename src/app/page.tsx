@@ -78,7 +78,7 @@ export default function HomePage() {
             We Build<br /><span className="gold-text" style={{ fontStyle: 'italic' }}>Timeless</span><br />Structures
           </h1>
           <p style={{ fontFamily: 'var(--font-jost)', color: '#ccc', fontSize: 'clamp(15px, 2vw, 18px)', lineHeight: '1.85', fontWeight: '300', maxWidth: '580px', margin: '0 auto 2.8rem', animation: 'fadeUp 1s ease 0.4s both' }}>
-            New builds, residential, commercial and civil construction across Perth — backed by over 90 years of combined industry experience.
+            New builds, residential, commercial and civil construction across Perth, backed by over 90 years of combined industry experience.
           </p>
           <div style={{ display: 'flex', gap: '2.5rem', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', animation: 'fadeUp 1s ease 0.6s both' }}>
             <Link href="/quote" className="btn-gold">Start Your Project</Link>
@@ -121,7 +121,7 @@ export default function HomePage() {
               EMF Contracting handles all aspects of construction and management, backed by a team with over 90 years of combined experience in the building and construction industry.
             </p>
             <p style={{ fontFamily: 'var(--font-jost)', color: '#bbb', fontSize: '16px', lineHeight: '1.9', fontWeight: '300', marginBottom: '2.5rem' }}>
-              We work face-to-face with every client from the first meeting, through planning and design, to a build delivered on time and on budget — with honest communication the whole way through.
+              We work face-to-face with every client from the first meeting, through planning and design, to a build delivered on time and on budget, with honest communication the whole way through.
             </p>
             <div style={{ display: 'flex', gap: '2.5rem', marginBottom: '2.8rem' }}>
               {badges.map((b, i) => (
@@ -141,7 +141,7 @@ export default function HomePage() {
           <div ref={addRef} className="reveal" style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <SectionLabel text="Our Services" center />
             <h2 style={{ fontFamily: 'var(--font-cormorant)', fontSize: 'clamp(2.8rem, 5vw, 4.2rem)', fontWeight: '400', color: '#fff', lineHeight: '1.1' }}>Full-Spectrum <span className="gold-text">Construction</span></h2>
-            <p style={{ fontFamily: 'var(--font-jost)', color: '#bbb', fontSize: '17px', lineHeight: '1.8', fontWeight: '300', maxWidth: '540px', margin: '1.2rem auto 0' }}>From foundation to finish — every service delivered by our in-house team of master builders.</p>
+            <p style={{ fontFamily: 'var(--font-jost)', color: '#bbb', fontSize: '17px', lineHeight: '1.8', fontWeight: '300', maxWidth: '540px', margin: '1.2rem auto 0' }}>From foundation to finish, every service delivered by our in-house team of master builders.</p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1px', background: '#D4A84314' }} className="services-grid">
             {services.map((s, i) => (
@@ -178,7 +178,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FEATURED PROJECTS — click navigates to /work?project=slug */}
+      {/* FEATURED PROJECTS: click navigates to /work?project=slug */}
       <section style={{ padding: '8rem 2rem', background: '#111110' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <div ref={addRef} className="reveal" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '3.5rem', flexWrap: 'wrap', gap: '1rem' }}>
@@ -222,7 +222,7 @@ export default function HomePage() {
             </blockquote>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '14px' }}>
               <div style={{ width: '30px', height: '1px', background: 'linear-gradient(to right, transparent, #D4A843)' }} />
-              <span style={{ fontFamily: 'var(--font-jost)', fontSize: '11px', letterSpacing: '0.3em', textTransform: 'uppercase', color: '#D4A843', fontWeight: '500' }}>— Client, Perth</span>
+              <span style={{ fontFamily: 'var(--font-jost)', fontSize: '11px', letterSpacing: '0.3em', textTransform: 'uppercase', color: '#D4A843', fontWeight: '500' }}>Client, Perth</span>
               <div style={{ width: '30px', height: '1px', background: 'linear-gradient(to left, transparent, #D4A843)' }} />
             </div>
           </div>
