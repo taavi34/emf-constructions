@@ -16,7 +16,7 @@ function loginPage(showError: boolean) {
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="robots" content="noindex, nofollow" />
-<title>EMF Contracting — Preview</title>
+<title>EMF Contracting - Preview</title>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -82,7 +82,7 @@ function loginPage(showError: boolean) {
 <body>
   <form method="POST">
     <h1>EMF Contracting</h1>
-    <p class="sub">Site in progress — enter password to preview</p>
+    <p class="sub">Site in progress. Enter password to preview</p>
     ${showError ? '<p class="error">Incorrect password, please try again.</p>' : ''}
     <input type="password" name="password" placeholder="Password" autofocus required />
     <button type="submit">Enter</button>
