@@ -21,10 +21,10 @@ export default function AboutPage() {
   const GoldLine = () => <span style={{ display: 'block', width: '40px', height: '1px', background: 'linear-gradient(to right, #D4A843, #F0C866)', flexShrink: 0 }} />
 
   const values = [
-    { title: 'Craftsmanship', desc: 'Every joint, surface and finish is treated as a signature. We do not cut corners — ever.' },
+    { title: 'Craftsmanship', desc: 'Every joint, surface and finish is treated as a signature. We do not cut corners, ever.' },
     { title: 'Partnership', desc: 'Your vision drives every decision. We listen, advise, and build alongside you from day one.' },
     { title: 'Precision', desc: 'On time, on budget, and beyond expectation. Our project management is as refined as our builds.' },
-    { title: 'Legacy', desc: 'We build structures that outlast trends — designed to be lived in, worked in, and passed down.' },
+    { title: 'Legacy', desc: 'We build structures that outlast trends, designed to be lived in, worked in, and passed down.' },
   ]
 
   return (
@@ -62,10 +62,10 @@ export default function AboutPage() {
               Building the extraordinary,<br />one structure at a time.
             </h2>
             <p style={{ fontFamily: 'var(--font-jost)', color: '#ccc', fontSize: '17px', lineHeight: '1.9', fontWeight: '300', marginBottom: '1.2rem' }}>
-              EMF Contracting handles all aspects of construction and management for clients across Perth — city and rural — backed by a team with over 90 years of combined experience in the building and construction industry. Our work spans new builds, residential construction, commercial construction and civil construction.
+              EMF Contracting handles all aspects of construction and management for clients across Perth (both city and rural), backed by a team with over 90 years of combined experience in the building and construction industry. Our work spans new builds, residential construction, commercial construction and civil construction.
             </p>
             <p style={{ fontFamily: 'var(--font-jost)', color: '#bbb', fontSize: '16px', lineHeight: '1.9', fontWeight: '300', marginBottom: '2.5rem' }}>
-              We're fully licensed and insured. Every project starts with an on-site, face-to-face meeting, moves through planning and design until the vision is right, and is delivered on time and on budget — with honest, direct communication the whole way through.
+              We're fully licensed and insured. Every project starts with an on-site, face-to-face meeting, moves through planning and design until the vision is right, and is delivered on time and on budget, with honest, direct communication the whole way through.
             </p>
             <Link href="/quote" className="btn-gold">Work With Us</Link>
           </div>
